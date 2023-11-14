@@ -1,6 +1,7 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+pub mod py_project;
+
+use py_project::PyProject;
+use py_project::config::Version;
 
 #[cfg(test)]
 mod tests {
@@ -8,7 +9,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        println! ("{}", result)
+        let operator = PyProject::new("test_operator".to_string(), Version::from("3.12".to_string()), None);
+
     }
 }
